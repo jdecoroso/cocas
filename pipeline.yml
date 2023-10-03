@@ -1,0 +1,33 @@
+resources:
+  - name: source-code
+    type: git
+    source:
+      uri: https://github.com/jdecoroso/cocas.git
+      branch: main
+
+jobs:
+  - name: systest-validation
+    public: true
+    plan:
+      - get: source-code
+        trigger: true
+      - task: run-system-tests
+        config:
+      # Tells Concourse which type of worker this task should run on
+          platform: linux
+      # This is one way of telling Concourse which container image to use for a
+          image_resource:
+            type: registry-image
+            source:
+              repository: maven
+              tag: latest
+          inputs:
+            - name: source-code
+      # The command Concourse will run inside the container
+          run:
+            path: /bin/bash
+            args:
+              - -c
+              - |
+                  cd source-code
+                  mvn -f pom.xml install
