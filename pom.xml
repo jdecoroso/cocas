@@ -60,8 +60,8 @@
 				<version>3.1.2</version>
 
 				<configuration>
-					<forkCount>0</forkCount>					                
-					<!--reuseForks>false</reuseForks-->
+					<!--forkCount>0</forkCount-->					                
+					<reuseForks>false</reuseForks>
 					<!--useSystemClassLoader>false</useSystemClassLoader-->
 
 				</configuration>
