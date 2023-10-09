@@ -20,7 +20,7 @@ jobs:
             type: registry-image
             source:
               repository: maven
-              tag: latest
+              tag: 3.8.2-openjdk-11
           inputs:
             - name: source-code
       # The command Concourse will run inside the container
