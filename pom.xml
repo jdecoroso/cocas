@@ -61,7 +61,7 @@
   <configuration>
     <reuseForks>false</reuseForks>
     <useSystemClassLoader>false</useSystemClassLoader>
-    <testFailureIgnore>true</testFailureIgnore>
+    <testFailureIgnore>false</testFailureIgnore>
 
   </configuration>
 </plugin>
